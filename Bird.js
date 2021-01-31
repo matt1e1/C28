@@ -5,8 +5,8 @@ class Bird extends BaseClass {
   }
 
   display() {
-    this.body.position.x = mouseX;
-    this.body.position.y = mouseY;
+    this.obj.position.x = mouseX;
+    this.obj.position.y = mouseY;
     super.display();
   }
 }
