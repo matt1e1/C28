@@ -37,9 +37,9 @@ function setup(){
 
     bird = new Bird(100,100);
 
-    log6= new Log(300,200,100,PI/4);
+    // log6= new Log(300,200,100,PI/4);
 
-    chain = new Spring(log6.obj,bird.obj);
+    chain = new Spring(bird.obj, {x:270, y:150});
    
 }
 
@@ -63,10 +63,24 @@ function draw(){
     box5.display();
     log4.display();
     log5.display();
-    log6.display();
+    // log6.display();
 
     bird.display();
     platform.display();
     chain.display();
+
+}
+
+function mouseDragged(){
+
+Matter.Body.setPosition(bird.obj,{x:mouseX, y:mouseY})
+
+
+}
+
+function mouseReleased(){
+
+chain.flight()
+
 
 }
